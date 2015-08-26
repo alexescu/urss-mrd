@@ -31,6 +31,7 @@ public class RoomCtrlTests {
 		createRoomResourceTable();
 		connection.commit();
 		prepareRoom();
+		prepareRoom();
 	}
 
 	@Test
@@ -74,6 +75,7 @@ public class RoomCtrlTests {
 		
 		assertEquals(rms, rooms);
 	}
+	
 	
 	private static void prepareRoom() throws SQLException {
 		String InsertQuery = "INSERT INTO ROOM"
