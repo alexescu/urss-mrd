@@ -31,7 +31,6 @@ public class RoomCtrlTests {
 		createRoomResourceTable();
 		connection.commit();
 		prepareRoom();
-		prepareRoom();
 	}
 
 	@Test
