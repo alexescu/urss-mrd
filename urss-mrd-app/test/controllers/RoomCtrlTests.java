@@ -19,7 +19,7 @@ import data_access.Room;
 public class RoomCtrlTests {
 	
 	// hello carla
-
+	// hello alex
 	private static Connection connection;
 
 	@BeforeClass
