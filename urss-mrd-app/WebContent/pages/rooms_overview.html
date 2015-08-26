@@ -1,0 +1,18 @@
+<div class="mainPanel" ng-swipe-left="nextPage('room_overview')" ng-swipe-right="prevPage('welcome')">		
+		<table id="rooms_table">
+				<thead ng-model="rooms">
+					<tr>
+						<th></th>
+						<th ng-repeat="x in rooms">{{x}}</th>		
+					</tr>
+				</thead>
+				<tbody ng-model="result">
+					<tr ng-repeat="h in result ">
+						<td>{{h.h}}</td>
+						<td ng-repeat="y in h.name track by $index" ng-class='{red: h.name[$index]!=""}'>
+							{{h.name[$index]}}
+						</td>				
+					</tr>
+				</tbody>
+		</table>
+</div>

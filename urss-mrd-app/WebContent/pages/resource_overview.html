@@ -1,0 +1,70 @@
+<!-- <div class="mainPanel" ng-swipe-right="nextPage('welcome')" ng-swipe-left="prevPage('room_overview')"> -->
+		
+		<!-- BLACK Images -->
+			<div class="black-images/icons mainPanel"
+				ng-show="selectedColor=='default'" 
+				ng-swipe-left="nextPage('welcome')" ng-swipe-right="prevPage('room_overview')">
+	
+				<div class="col-sm-6 col-lg-6">
+			 		<img src="images/icons/location.png" class="icon"> 
+			 			{{ room[1].location }}
+			 	</div>
+			 	
+			 	<div class="col-sm-6 col-lg-6 ">
+			 		<img src="images/icons/capacity.png" class="icon"> 
+			 			Room capacity: {{ room[0].capacity}}
+			 	</div> 
+			 				 	
+			 	 <div class="col-sm-6 col-lg-6" ng-repeat="r in room[0].resources">
+			 			<img src="images/icons/{{r.image}}" class="icon"> 		
+			 			{{r.name + ': ' + r.description}}	
+				 </div>
+				 
+		
+			</div>	
+			
+			<!-- RED images/icons -->
+			<div class="red-images/icons mainPanel"
+				ng-show="selectedColor=='red'"  
+				ng-swipe-left="nextPage('welcome')" ng-swipe-right="prevPage('room_overview')">
+	
+				<div class="col-sm-6 col-lg-6">
+			 		<img src="images/icons/rlocation.png" class="icon"> 
+			 			{{ room[0].location }}
+			 	</div>
+			 	
+			 	<div class="col-sm-6 col-lg-6 ">
+			 		<img src="images/icons/rcapacity.png" class="icon"> 
+			 			Room capacity: {{ room[0].capacity}}
+			 	</div> 
+			 				 	
+			 	 <div class="col-sm-6 col-lg-6" ng-repeat="r in room[0].resources">
+			 			<img src="images/icons/r{{r.image}}" class="icon"> 		
+			 			{{r.name + ': ' + r.description}}	
+				 </div>
+				 	
+			</div>
+			
+				<!-- GREEN images/icons -->
+			<div class=" green-images/icons mainPanel"
+				ng-show="selectedColor=='green'"  
+				ng-swipe-left="nextPage('welcome')" ng-swipe-right="prevPage('room_overview')">
+	
+				<div class="col-sm-6 col-lg-6">
+			 		<img src="images/icons/glocation.png" class="icon"> 
+			 			{{ room[0].location }}
+			 	</div>
+			 	
+			 	<div class="col-sm-6 col-lg-6 ">
+			 		<img src="images/icons/gcapacity.png" class="icon"> 
+			 			Room capacity: {{ room[0].capacity}}
+			 	</div> 
+			 				 	
+			 	 <div class="col-sm-6 col-lg-6" ng-repeat="r in room[0].resources">
+			 			<img src="images/icons/g{{r.image}}" class="icon"> 		
+			 			{{r.name + ': ' + r.description}}	
+				 </div>
+				 	
+			</div>
+			
+<!-- </div> -->

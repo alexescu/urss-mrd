@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<title>URSS - Meeting Room Display v.1.0</title>
+		<!-- Angular js files -->
+		<script src="scripts/modules/angular/angular.min.js"></script>
+		<script src="scripts/modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+		<script src="scripts/modules/angular-touch/angular-touch.js"></script>
+		<script src="scripts/javascript.js"></script>
+		
+		
+		<!-- jQuery (necessary for Bootstrap"s JavaScript plugins) -->
+		<script src="scripts/modules/jquery/jquery-1.11.3.min.js"></script>
+			
+		<!-- Bootstrap main css file -->
+		<link href="scripts/modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"></link>
+		
+		<!-- Bootstrap template file -->
+		<link href="scripts/modules/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet"></link>
+		
+		<!-- Bootstrap main js file -->
+		<script src="scripts/modules/bootstrap/dist/js/bootstrap.min.js"></script>	
+		
+		<!-- App js file --> 
+		<script src="scripts/mrdModule.js"></script>
+		<script src="scripts/mrdController.js"></script>
+		
+		<script src="scripts/controllers/headerController.js"></script>
+		<script src="scripts/controllers/roomOverviewController.js"></script>
+		<script src="scripts/controllers/roomResourcesController.js"></script>
+		<script src="scripts/controllers/roomsOverviewController.js"></script>
+		<script src="scripts/controllers/welcomeController.js"></script>
+		
+		
+		<!-- App css file -->
+		<link href="styles/mrdStyle.css" rel="stylesheet"></link>				
+	</head>	
+	
+	<body ng-app="mrdApp" ng-controller="HeaderController" ng-style ="bodyColor">		
+	
+		<div class="container-fluid">
+					
+			<!--HEADER CONTENT -->	
+				<div class="row " id="header">	 	  
+					
+					<div class="col-sm-9 col-lg-9 columns">
+					
+						<div class="col-sm-2 col-lg-1">
+							<h1 id="room-no"> {{ currentMeeting.roomId }} </h1>								
+						</div>
+						
+						<div class="col-sm-7 col-lg-9 heading-title">
+							<h2>{{ currentMeeting.subject }}</h2>
+							<h3>{{ currentMeeting.owner }}</h3>
+						</div>
+						
+						<div class="col-sm-3 col-lg-2">
+							<button type="button" class="btn btn-default btn-lg check-in"	
+							ng-show="selectedButton=='check-in'"
+							ng-click="selectedColor='red'; selectedButton='check-out'; bodyColor={'background-color': '#b84d45'};" >Check in</button>
+							
+							<button type="button" class="btn btn-default btn-lg check-out" 		
+							ng-show="selectedButton=='check-out'"							
+							ng-click="selectedColor='green'; selectedButton='check-in'; bodyColor={'background-color': '#099c35'} ; ">Check out</button>
+							
+							<button type="button" class="btn btn-default btn-lg book-ad-hoc" 
+							ng-show="selectedButton=='book-ad-hoc'"
+							ng-click="selectedColor='red'; selectedButton='check-out'; bodyColor={'background-color': '#b84d45'};">Book ad hoc</button>
+						</div>
+									
+					</div>
+					
+					<!-- Date and time column-->			
+					<div class="col-sm-2 col-lg-3 columns" id="clock">
+					
+						<h3>{{ date | date:"H:mm:ss" }}</h3>
+						<h3>{{ date | date:"dd.MM.yyyy " }}</h3>
+						
+					</div>
+					
+				</div>
+				
+			<!--MAIN CONTENT-->
+				<div class="row"> 		
+					<div class="col-sm-12 col-lg-12 columns"  style="margin-bottom:10px;">
+							<div ui-view></div>
+					</div>	
+				</div>
+				
+		</div>		
+	</body>
+</html>	  

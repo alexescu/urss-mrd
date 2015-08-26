@@ -1,0 +1,18 @@
+<div class="mainPanel" ng-swipe-left="nextPage('resource_overview')" ng-swipe-right="prevPage('rooms_overview')">
+
+	<table width="1250" height="500" st-table="rowCollection" class="table table-striped" id="myTable">
+		<thead>
+		</thead>
+		<tbody>
+			<tr ng-repeat="row in rowCollection">
+				<td id="td01">{{row.from_hour}}</td>
+				<td id="td02"> {{row.to_hour}}</td>
+				<td>{{row.meeting_name}}</td>
+				<td>{{row.organizer_name}}</td>
+				
+			</tr>
+			
+		</tbody>
+	</table>
+	
+</div>

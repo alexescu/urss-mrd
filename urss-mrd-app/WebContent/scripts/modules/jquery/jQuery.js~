@@ -1,0 +1,29 @@
+$(document).ready(function(){
+	$(".check-in").click(function(){
+	   $(".check-in").hide();
+	   $(".check-out").show();
+	   
+		$("body").css({"background-color": "#b84d45"});
+		$("table").css({"border-color": "#b84d45"});
+	});
+});
+
+$(document).ready(function(){
+	$(".check-out").click(function(){
+	   $(".check-in").show();
+	   $(".check-out").hide();
+		$("body").css({"background-color": "#099c35"});
+		$("table").css({"border-color": "#099c35"});
+	});
+});
+
+
+$(document).ready(function(){
+	$(".book-ad-hoc").click(function(){
+	   $(".check-in").hide();
+	   $(".check-out").show();
+	   $(".book-ad-hoc").hide();
+		$("body").css({"background-color": "#b84d45"});
+		$("table").css({"border-color": "#b84d45"});
+	});
+});
